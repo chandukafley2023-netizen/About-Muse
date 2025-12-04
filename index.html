@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MUSE | Project Report Portal</title>
     
+    <!-- Prevents 404 error for favicon -->
+    <link rel="icon" href="data:,">
+
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Lucide Icons (Fixed Link) -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <!-- Lucide Icons (Updated to stable Development Script) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -124,4 +127,357 @@
                     <div class="absolute top-0 right-0 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
                     <div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
                         <div>
-                            <div class="inline-flex items-center gap-2 px-3
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/20 text-purple-200 text-xs font-semibold mb-4 border border-purple-500/30">
+                                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                                Status: Active Project
+                            </div>
+                            <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">MUSE</h1>
+                            <p class="text-lg text-purple-200 mb-6">Social Media Platform for Art & Creativity</p>
+                            <button onclick="showSection('report')" class="bg-white text-purple-900 hover:bg-slate-100 px-6 py-2.5 rounded-lg font-bold transition-colors inline-flex items-center gap-2">
+                                Read Report <i data-lucide="arrow-right" size="18"></i>
+                            </button>
+                        </div>
+                        
+                        <!-- Image 1 Placeholder -->
+                        <div class="relative rounded-xl overflow-hidden border border-white/10 shadow-lg group">
+                            <!-- REPLACE THIS SRC WITH YOUR IMAGE 1 -->
+                            <img src="https://placehold.co/600x400/2e1065/ffffff?text=MUSE+App+Preview+(Image+1)" alt="App Interface" class="w-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-4">
+                                <p class="text-white font-medium text-sm">Figure 1: MUSE App Interface</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-purple-500/50 transition-colors">
+                        <div class="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="code" class="text-blue-400"></i>
+                        </div>
+                        <h3 class="text-slate-400 text-sm font-medium uppercase">Tech Stack</h3>
+                        <p class="text-2xl font-bold text-white">Web App</p>
+                        <p class="text-xs text-slate-500 mt-1">HTML, CSS, JS, Firebase</p>
+                    </div>
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-amber-500/50 transition-colors">
+                        <div class="w-10 h-10 bg-amber-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="git-branch" class="text-amber-400"></i>
+                        </div>
+                        <h3 class="text-slate-400 text-sm font-medium uppercase">Evolution</h3>
+                        <p class="text-2xl font-bold text-white">Pivot</p>
+                        <p class="text-xs text-slate-500 mt-1">From Static Site to Dynamic App</p>
+                    </div>
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-pink-500/50 transition-colors">
+                        <div class="w-10 h-10 bg-pink-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="users" class="text-pink-400"></i>
+                        </div>
+                        <h3 class="text-slate-400 text-sm font-medium uppercase">Focus</h3>
+                        <p class="text-2xl font-bold text-white">Artists</p>
+                        <p class="text-xs text-slate-500 mt-1">Community First Design</p>
+                    </div>
+                </div>
+
+                <!-- Quick Nav -->
+                <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <i data-lucide="zap" class="text-yellow-500"></i> Quick Access
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <button onclick="showSection('features')" class="p-4 bg-slate-800/50 border border-slate-700 rounded-lg text-left hover:bg-slate-800 transition-colors group">
+                        <h3 class="font-bold text-white group-hover:text-purple-400 transition-colors">Key Features</h3>
+                        <p class="text-sm text-slate-400">Explore Museum Mode, Critique Boards, and more.</p>
+                    </button>
+                    <button onclick="showSection('evolution')" class="p-4 bg-slate-800/50 border border-slate-700 rounded-lg text-left hover:bg-slate-800 transition-colors group">
+                        <h3 class="font-bold text-white group-hover:text-amber-400 transition-colors">Project Challenges</h3>
+                        <p class="text-sm text-slate-400">How the project changed from "Art of Painting".</p>
+                    </button>
+                </div>
+            </div>
+
+            <!-- SECTION: REPORT -->
+            <div id="report" class="content-section hidden max-w-4xl mx-auto space-y-12 pb-12">
+                <div class="border-b border-slate-700 pb-6">
+                    <h1 class="text-3xl font-bold text-white mb-2">Project Report</h1>
+                    <div class="flex flex-wrap gap-4 text-sm text-slate-400">
+                        <span class="flex items-center gap-1"><i data-lucide="user" size="14"></i> Chandan Kafley</span>
+                        <span class="flex items-center gap-1"><i data-lucide="graduation-cap" size="14"></i> Grade 9 Technology Group 2</span>
+                    </div>
+                </div>
+
+                <!-- 1. Executive Summary -->
+                <section>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-4 flex items-center gap-2">
+                        <span class="bg-purple-500/10 p-2 rounded-lg text-purple-400 text-sm">01</span> Executive Summary
+                    </h2>
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700">
+                        <p class="text-slate-300 leading-relaxed">
+                            MUSE is a social media application designed with a goal of spreading traditional art around the global community of artists, creators, and art enthusiasts. Unlike generic social platforms, MUSE prioritizes high-fidelity visual presentation, copyright protection, and niche community engagement. The platform serves as a digital gallery where users can curate portfolios, network with peers, and discover inspiration across various artistic mediums.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- 2. Introduction -->
+                <section>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-4 flex items-center gap-2">
+                        <span class="bg-purple-500/10 p-2 rounded-lg text-purple-400 text-sm">02</span> Introduction
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-slate-800/30 p-5 rounded-lg border border-slate-700/50">
+                            <h3 class="text-lg font-semibold text-white mb-2">Background</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">In the current digital era, general-purpose social media platforms often compress image quality and prioritize algorithmic engagement over artistic appreciation. Artists struggle to find dedicated spaces where their work is viewed as art rather than just "content."</p>
+                        </div>
+                        <div class="bg-slate-800/30 p-5 rounded-lg border border-slate-700/50">
+                            <h3 class="text-lg font-semibold text-white mb-2">Objective</h3>
+                            <ul class="text-slate-400 text-sm space-y-2">
+                                <li class="flex gap-2"><i data-lucide="check-circle" size="16" class="text-green-500 shrink-0"></i> Provide high-quality images without aggressive compression.</li>
+                                <li class="flex gap-2"><i data-lucide="check-circle" size="16" class="text-green-500 shrink-0"></i> Facilitate meaningful critique and feedback.</li>
+                                <li class="flex gap-2"><i data-lucide="check-circle" size="16" class="text-green-500 shrink-0"></i> Connect artists with potential clients.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. Target Audience -->
+                <section>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-4 flex items-center gap-2">
+                        <span class="bg-purple-500/10 p-2 rounded-lg text-purple-400 text-sm">03</span> Target Audience
+                    </h2>
+                    <div class="bg-gradient-to-r from-slate-800 to-slate-900 p-6 rounded-xl border border-slate-700">
+                        <div class="mb-4 pb-4 border-b border-slate-700">
+                            <strong class="text-purple-300 block mb-1">Primary</strong>
+                            <p class="text-slate-300">Digital artists, traditional painters, illustrators, photographers, and sculptors seeking a professional portfolio space.</p>
+                        </div>
+                        <div>
+                            <strong class="text-teal-300 block mb-1">Secondary</strong>
+                            <p class="text-slate-300">Art collectors, gallery curators, and art enthusiasts looking for inspiration or talent to hire.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Future Plans -->
+                <section>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-4 flex items-center gap-2">
+                        <span class="bg-purple-500/10 p-2 rounded-lg text-purple-400 text-sm">04</span> Future Scope
+                    </h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="p-4 bg-slate-800 rounded-lg border border-slate-700 text-center">
+                            <i data-lucide="shopping-bag" class="mx-auto mb-2 text-purple-400"></i>
+                            <h3 class="font-bold text-white text-sm">Marketplace</h3>
+                            <p class="text-xs text-slate-400 mt-1">Sell prints & digital assets directly.</p>
+                        </div>
+                        <div class="p-4 bg-slate-800 rounded-lg border border-slate-700 text-center">
+                            <i data-lucide="video" class="mx-auto mb-2 text-red-400"></i>
+                            <h3 class="font-bold text-white text-sm">Live Streaming</h3>
+                            <p class="text-xs text-slate-400 mt-1">"Work in Progress" streams.</p>
+                        </div>
+                        <div class="p-4 bg-slate-800 rounded-lg border border-slate-700 text-center">
+                            <i data-lucide="box" class="mx-auto mb-2 text-blue-400"></i>
+                            <h3 class="font-bold text-white text-sm">AR Galleries</h3>
+                            <p class="text-xs text-slate-400 mt-1">Visualize art on walls.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- SECTION: EVOLUTION -->
+            <div id="evolution" class="content-section hidden max-w-4xl mx-auto pb-12">
+                <div class="mb-8">
+                    <h1 class="text-3xl font-bold text-white mb-4">Challenges & Evolution</h1>
+                    <p class="text-slate-400 text-lg">The story of how the project pivoted from a static website to a dynamic app.</p>
+                </div>
+
+                <div class="space-y-12">
+                    <!-- Before Card -->
+                    <div class="relative bg-slate-800 rounded-2xl p-1 border border-slate-700 overflow-hidden">
+                        <div class="bg-slate-900 p-6 rounded-xl">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="px-3 py-1 bg-red-500/20 text-red-400 text-xs font-bold rounded-full border border-red-500/20">Initial Concept</span>
+                                <h2 class="text-xl font-bold text-white">"The Art of Painting"</h2>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="space-y-4">
+                                    <p class="text-slate-300">
+                                        At the start of the development process, the idea was simply a personal gallery website. It consisted of:
+                                    </p>
+                                    <ul class="space-y-2 text-slate-400 text-sm">
+                                        <li class="flex items-center gap-2"><i data-lucide="x" size="14" class="text-red-500"></i> 5 Separate HTML Files</li>
+                                        <li class="flex items-center gap-2"><i data-lucide="x" size="14" class="text-red-500"></i> Over 1000 lines of code on Home Page</li>
+                                        <li class="flex items-center gap-2"><i data-lucide="x" size="14" class="text-red-500"></i> Hard to maintain</li>
+                                    </ul>
+                                    <div class="bg-amber-900/20 border-l-2 border-amber-500 p-3 mt-4">
+                                        <p class="text-amber-200 text-xs italic">"The code maybe could have been simplified with helps from AI but I didn't really feel like I was wanting to make that kind of website."</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Image 8 Placeholder -->
+                                <div class="bg-black/40 rounded-lg overflow-hidden border border-slate-700">
+                                    <!-- REPLACE THIS SRC WITH YOUR IMAGE 8 -->
+                                    <img src="https://placehold.co/600x400/1e1e1e/cccccc?text=Image+8:+Original+Static+Website" alt="Old Website Design" class="w-full h-48 object-cover opacity-80 hover:opacity-100 transition-opacity">
+                                    <div class="p-2 bg-black/60 text-center">
+                                        <p class="text-xs text-slate-400">Figure 2: First design attempt (Static HTML)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="flex justify-center">
+                        <i data-lucide="arrow-down" class="text-purple-500 animate-bounce" size="32"></i>
+                    </div>
+
+                    <!-- After Card -->
+                    <div class="relative bg-gradient-to-br from-purple-900/40 to-slate-800 rounded-2xl p-1 border border-purple-500/40 overflow-hidden">
+                        <div class="bg-slate-900/90 p-6 rounded-xl">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="px-3 py-1 bg-green-500/20 text-green-400 text-xs font-bold rounded-full border border-green-500/20">Final Product</span>
+                                <h2 class="text-xl font-bold text-white">MUSE Web App</h2>
+                            </div>
+                            
+                            <p class="text-slate-300 mb-4">
+                                I realized the static approach was limited. I pivoted to creating a dynamic, social-media style application.
+                            </p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-slate-800 p-4 rounded-lg border border-slate-700">
+                                    <h3 class="font-bold text-white mb-2 flex items-center gap-2"><i data-lucide="bot" class="text-purple-400"></i> AI & Coding</h3>
+                                    <p class="text-sm text-slate-400">Even though AI could help fix errors, it sometimes broke the responsiveness. I learned to manually correct the AI's output to match my specific design vision.</p>
+                                </div>
+                                <div class="bg-slate-800 p-4 rounded-lg border border-slate-700">
+                                    <h3 class="font-bold text-white mb-2 flex items-center gap-2"><i data-lucide="layout" class="text-blue-400"></i> Web App Structure</h3>
+                                    <p class="text-sm text-slate-400">Moved to a single-page application structure for better performance and easier maintenance.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION: FEATURES -->
+            <div id="features" class="content-section hidden max-w-5xl mx-auto pb-12">
+                <div class="text-center mb-12">
+                    <h1 class="text-3xl font-bold text-white mb-2">Key Features</h1>
+                    <p class="text-slate-400">Built for the specific needs of the art community.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Feature 1 -->
+                    <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 group hover:border-purple-500 transition-colors">
+                        <div class="h-40 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-black/20"></div>
+                            <i data-lucide="image" size="48" class="text-slate-500 group-hover:text-purple-400 transition-colors relative z-10"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Museum Mode</h3>
+                            <p class="text-slate-400 text-sm mb-4">A full-screen viewing experience that hides UI buttons and captions to focus 100% on the artwork.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-slate-900 px-2 py-1 rounded text-slate-500">Full Screen</span>
+                                <span class="text-xs bg-slate-900 px-2 py-1 rounded text-slate-500">Immersive</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 group hover:border-pink-500 transition-colors">
+                        <div class="h-40 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center relative overflow-hidden">
+                             <div class="absolute inset-0 bg-black/20"></div>
+                            <i data-lucide="heart" size="48" class="text-slate-500 group-hover:text-pink-400 transition-colors relative z-10"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Appreciation System</h3>
+                            <p class="text-slate-400 text-sm mb-4">A "Like" system designed to boost visibility based on artistic merit rather than viral trends.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-slate-900 px-2 py-1 rounded text-slate-500">Merit Based</span>
+                                <span class="text-xs bg-slate-900 px-2 py-1 rounded text-slate-500">No Algorithms</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 group hover:border-blue-500 transition-colors">
+                        <div class="h-40 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center relative overflow-hidden">
+                             <div class="absolute inset-0 bg-black/20"></div>
+                            <i data-lucide="message-square" size="48" class="text-slate-500 group-hover:text-blue-400 transition-colors relative z-10"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Critique Board</h3>
+                            <p class="text-slate-400 text-sm mb-4">Specialized comment sections allowing for constructive, threaded feedback distinct from general comments.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-slate-900 px-2 py-1 rounded text-slate-500">Feedback</span>
+                                <span class="text-xs bg-slate-900 px-2 py-1 rounded text-slate-500">Growth</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 group hover:border-teal-500 transition-colors">
+                        <div class="h-40 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center relative overflow-hidden">
+                             <div class="absolute inset-0 bg-black/20"></div>
+                            <i data-lucide="grid" size="48" class="text-slate-500 group-hover:text-teal-400 transition-colors relative z-10"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">Dynamic Portfolios</h3>
+                            <p class="text-slate-400 text-sm mb-4">Grid and Mosaic view options to best showcase different aspect ratios (Landscape vs Portrait).</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-slate-900 px-2 py-1 rounded text-slate-500">Customizable</span>
+                                <span class="text-xs bg-slate-900 px-2 py-1 rounded text-slate-500">Bio & Shop</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('fade-in');
+            });
+
+            // Show selected section
+            const selected = document.getElementById(sectionId);
+            selected.classList.remove('hidden');
+            // Trigger reflow to restart animation
+            void selected.offsetWidth; 
+            selected.classList.add('fade-in');
+
+            // Update Nav State
+            document.querySelectorAll('.nav-item').forEach(el => {
+                el.classList.remove('active');
+                el.classList.remove('bg-purple-500/10');
+                el.classList.remove('text-purple-300');
+                el.classList.remove('border-l-4');
+                el.classList.remove('border-purple-500');
+            });
+
+            // Add active class to specific button based on data-section attribute
+            const activeBtn = document.querySelector(`.nav-item[data-section="${sectionId}"]`);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+                activeBtn.classList.add('bg-purple-500/10');
+                activeBtn.classList.add('text-purple-300');
+                activeBtn.classList.add('border-l-4');
+                activeBtn.classList.add('border-purple-500');
+            }
+
+            // Close mobile menu if open
+            const sidebar = document.getElementById('sidebar');
+            if (!sidebar.classList.contains('-translate-x-full') && window.innerWidth < 768) {
+                sidebar.classList.add('-translate-x-full');
+            }
+        }
+
+        function toggleMobileMenu() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('-translate-x-full');
+        }
+    </script>
+</body>
+</html>
