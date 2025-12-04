@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSE | Project Report Portal</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons (Fixed Link) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        
+        .nav-item.active {
+            background-color: rgba(168, 85, 247, 0.15); /* Purple tint */
+            border-left: 3px solid #a855f7;
+            color: #d8b4fe;
+        }
+    </style>
+</head>
+<body class="h-screen overflow-hidden flex flex-col md:flex-row">
+
+    <!-- Mobile Header -->
+    <header class="md:hidden bg-slate-900 border-b border-slate-800 p-4 flex justify-between items-center z-50">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center font-bold text-white">M</div>
+            <span class="font-bold text-lg">MUSE Portal</span>
+        </div>
+        <button onclick="toggleMobileMenu()" class="text-slate-400">
+            <i data-lucide="menu"></i>
+        </button>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="fixed inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 w-64 bg-slate-950 border-r border-slate-800 transition-transform duration-300 z-40 flex flex-col">
+        <div class="p-6 border-b border-slate-800 hidden md:flex items-center gap-3">
+            <div class="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center font-bold text-white shadow-lg shadow-purple-900/50">M</div>
+            <div>
+                <h1 class="font-bold text-xl tracking-tight text-white">MUSE</h1>
+                <p class="text-xs text-slate-500 uppercase tracking-wider">Project Portal</p>
+            </div>
+        </div>
+
+        <nav class="flex-1 overflow-y-auto p-4 space-y-1">
+            <div class="px-3 py-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Main</div>
+            <button onclick="showSection('dashboard')" data-section="dashboard" class="nav-item active w-full flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-medium text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
+                <i data-lucide="layout-dashboard" size="18"></i> Dashboard
+            </button>
+            <button onclick="showSection('report')" data-section="report" class="nav-item w-full flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-medium text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
+                <i data-lucide="file-text" size="18"></i> Full Report
+            </button>
+            
+            <div class="mt-6 px-3 py-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Deep Dive</div>
+            <button onclick="showSection('evolution')" data-section="evolution" class="nav-item w-full flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-medium text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
+                <i data-lucide="git-branch" size="18"></i> Evolution & Challenges
+            </button>
+            <button onclick="showSection('features')" data-section="features" class="nav-item w-full flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-medium text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
+                <i data-lucide="layers" size="18"></i> Features Showcase
+            </button>
+        </nav>
+
+        <div class="p-4 border-t border-slate-800">
+            <div class="flex items-center gap-3 px-3 py-2 bg-slate-900 rounded-lg border border-slate-800">
+                <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center">
+                    <i data-lucide="user" size="16" class="text-slate-400"></i>
+                </div>
+                <div class="overflow-hidden">
+                    <p class="text-sm font-medium text-white truncate">Chandan Kafley</p>
+                    <p class="text-xs text-slate-500 truncate">Grade 9 • Group 2</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 bg-slate-900 relative overflow-hidden flex flex-col h-full">
+        <!-- Content Scroll Area -->
+        <div id="content-area" class="flex-1 overflow-y-auto p-4 md:p-8 scroll-smooth">
+            
+            <!-- SECTION: DASHBOARD -->
+            <div id="dashboard" class="content-section fade-in max-w-5xl mx-auto">
+                <!-- Hero Card -->
+                <div class="relative bg-gradient-to-r from-purple-900 to-slate-900 rounded-2xl p-8 mb-8 border border-purple-500/30 overflow-hidden shadow-2xl">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+                    <div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-3
