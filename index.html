@@ -48,12 +48,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .glass-panel {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(148, 163, 184, 0.1);
-        }
-        
         .nav-item.active {
             background-color: rgba(168, 85, 247, 0.15); /* Purple tint */
             border-left: 3px solid #a855f7;
@@ -100,6 +94,12 @@
             <button onclick="showSection('features')" data-section="features" class="nav-item w-full flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-medium text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
                 <i data-lucide="layers" size="18"></i> Features Showcase
             </button>
+
+            <!-- NEW ABOUT ME BUTTON -->
+            <div class="mt-6 px-3 py-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Profile</div>
+            <button onclick="showSection('about')" data-section="about" class="nav-item w-full flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-medium text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
+                <i data-lucide="user-circle" size="18"></i> About Developer
+            </button>
         </nav>
 
         <div class="p-4 border-t border-slate-800">
@@ -133,9 +133,14 @@
                             </div>
                             <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">MUSE</h1>
                             <p class="text-lg text-purple-200 mb-6">Social Media Platform for Art & Creativity</p>
-                            <button onclick="showSection('report')" class="bg-white text-purple-900 hover:bg-slate-100 px-6 py-2.5 rounded-lg font-bold transition-colors inline-flex items-center gap-2">
-                                Read Report <i data-lucide="arrow-right" size="18"></i>
-                            </button>
+                            <div class="flex gap-3">
+                                <button onclick="showSection('report')" class="bg-white text-purple-900 hover:bg-slate-100 px-6 py-2.5 rounded-lg font-bold transition-colors inline-flex items-center gap-2">
+                                    Read Report <i data-lucide="arrow-right" size="18"></i>
+                                </button>
+                                <button onclick="showSection('about')" class="bg-slate-800 text-white hover:bg-slate-700 border border-slate-700 px-6 py-2.5 rounded-lg font-bold transition-colors inline-flex items-center gap-2">
+                                    About Me
+                                </button>
+                            </div>
                         </div>
                         
                         <!-- Image 1 Placeholder -->
@@ -157,7 +162,7 @@
                         </div>
                         <h3 class="text-slate-400 text-sm font-medium uppercase">Tech Stack</h3>
                         <p class="text-2xl font-bold text-white">Web App</p>
-                        <p class="text-xs text-slate-500 mt-1">HTML and Firebase</p>
+                        <p class="text-xs text-slate-500 mt-1">HTML, CSS, JS, Firebase</p>
                     </div>
                     <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-amber-500/50 transition-colors">
                         <div class="w-10 h-10 bg-amber-500/10 rounded-lg flex items-center justify-center mb-4">
@@ -184,7 +189,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <button onclick="showSection('features')" class="p-4 bg-slate-800/50 border border-slate-700 rounded-lg text-left hover:bg-slate-800 transition-colors group">
                         <h3 class="font-bold text-white group-hover:text-purple-400 transition-colors">Key Features</h3>
-                        <p class="text-sm text-slate-400">Explore Museum Mode(Future Plan), Critique Boards, and more.</p>
+                        <p class="text-sm text-slate-400">Explore Museum Mode, Critique Boards, and more.</p>
                     </button>
                     <button onclick="showSection('evolution')" class="p-4 bg-slate-800/50 border border-slate-700 rounded-lg text-left hover:bg-slate-800 transition-colors group">
                         <h3 class="font-bold text-white group-hover:text-amber-400 transition-colors">Project Challenges</h3>
@@ -312,7 +317,7 @@
                                         At the start of the development process, the idea was simply a personal gallery website. It consisted of:
                                     </p>
                                     <ul class="space-y-2 text-slate-400 text-sm">
-                                        <li class="flex items-center gap-2"><i data-lucide="x" size="14" class="text-red-500"></i> 5 Separate HTML Files</li>
+                                        <li class="flex items-center gap-2"><i data-lucide="x" size="14" class="text-red-500"></i> 5 Separate HTML Files(Not so much of a problem as I am using this right now.)</li>
                                         <li class="flex items-center gap-2"><i data-lucide="x" size="14" class="text-red-500"></i> Over 1000 lines of code on Home Page</li>
                                         <li class="flex items-center gap-2"><i data-lucide="x" size="14" class="text-red-500"></i> Hard to maintain</li>
                                     </ul>
@@ -353,7 +358,7 @@
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="bg-slate-800 p-4 rounded-lg border border-slate-700">
                                     <h3 class="font-bold text-white mb-2 flex items-center gap-2"><i data-lucide="bot" class="text-purple-400"></i> AI & Coding</h3>
-                                    <p class="text-sm text-slate-400">Even though AI could help fix errors, it sometimes broke the responsiveness. I learned to manually correct the AI's output to match my specific design vision.</p>
+                                    <p class="text-sm text-slate-400">Even though AI could help fix errors, it sometimes broke the responsiveness. I learned to manually correct the AI's output to match my specific design vision.Prompts I used for AI :"to the log in page also add like a animation when you hover over the button because it looks like it doesn't work"</p>
                                 </div>
                                 <div class="bg-slate-800 p-4 rounded-lg border border-slate-700">
                                     <h3 class="font-bold text-white mb-2 flex items-center gap-2"><i data-lucide="layout" class="text-blue-400"></i> Web App Structure</h3>
@@ -380,7 +385,7 @@
                             <i data-lucide="image" size="48" class="text-slate-500 group-hover:text-purple-400 transition-colors relative z-10"></i>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">Museum Mode(Future Plan)</h3>
+                            <h3 class="text-xl font-bold text-white mb-2">Museum Mode (Part of Future Plan)</h3>
                             <p class="text-slate-400 text-sm mb-4">A full-screen viewing experience that hides UI buttons and captions to focus 100% on the artwork.</p>
                             <div class="flex flex-wrap gap-2">
                                 <span class="text-xs bg-slate-900 px-2 py-1 rounded text-slate-500">Full Screen</span>
@@ -433,6 +438,63 @@
                             <div class="flex flex-wrap gap-2">
                                 <span class="text-xs bg-slate-900 px-2 py-1 rounded text-slate-500">Customizable</span>
                                 <span class="text-xs bg-slate-900 px-2 py-1 rounded text-slate-500">Bio & Shop</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION: ABOUT ME (NEW) -->
+            <div id="about" class="content-section hidden max-w-4xl mx-auto pb-12">
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-8 border border-slate-700 relative overflow-hidden">
+                    <!-- Background Decor -->
+                    <div class="absolute top-0 right-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                    
+                    <div class="relative z-10 flex flex-col md:flex-row gap-8 items-center md:items-start">
+                        <!-- Avatar / Identity -->
+                        <div class="flex-shrink-0 text-center md:text-left">
+                            <div class="w-32 h-32 mx-auto md:mx-0 bg-slate-700 rounded-full flex items-center justify-center border-4 border-slate-600 shadow-xl mb-4">
+                                <i data-lucide="user" size="64" class="text-slate-400"></i>
+                            </div>
+                            <h2 class="text-2xl font-bold text-white">Chandan Kafley</h2>
+                            <p class="text-purple-400 font-medium">Lead Developer</p>
+                            <div class="mt-4 space-y-2 text-sm text-slate-400">
+                                <div class="flex items-center justify-center md:justify-start gap-2">
+                                    <i data-lucide="graduation-cap" size="14"></i> Grade 9
+                                </div>
+                                <div class="flex items-center justify-center md:justify-start gap-2">
+                                    <i data-lucide="users" size="14"></i> Technology Group 2
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bio Content -->
+                        <div class="flex-1 space-y-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                                    <i data-lucide="terminal" class="text-green-400"></i> The Developer Journey
+                                </h3>
+                                <p class="text-slate-300 leading-relaxed">
+                                    I am a student developer passionate about merging art with technology. My journey with <strong>MUSE</strong> began as a challenge to create a simple gallery, which evolved into a fully functional web application.
+                                </p>
+                            </div>
+
+                            <div class="bg-slate-900/50 p-5 rounded-xl border border-slate-800">
+                                <h4 class="font-bold text-white mb-2 text-sm uppercase tracking-wide text-slate-500">Key Milestone</h4>
+                                <p class="text-slate-300 text-sm">
+                                    "I started with a static site that had over <strong>1,000 lines of code</strong> in almost every file. Realizing this wasn't scalable, I taught myself how to change to a dynamic web app structure, managing AI tools to assist without compromising my original vision."
+                                </p>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="p-4 bg-slate-800 rounded-lg border border-slate-700">
+                                    <div class="text-purple-400 font-bold text-lg mb-1">Vision</div>
+                                    <p class="text-xs text-slate-400">To create a digital sanctuary where art is valued over algorithms.</p>
+                                </div>
+                                <div class="p-4 bg-slate-800 rounded-lg border border-slate-700">
+                                    <div class="text-blue-400 font-bold text-lg mb-1">Skills</div>
+                                    <p class="text-xs text-slate-400">HTML, CSS, JavaScript, Problem Solving, AI Collaboration.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
